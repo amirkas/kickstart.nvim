@@ -121,6 +121,16 @@ end)
 -- Enable break indent
 vim.o.breakindent = true
 
+-- Set tabstop to 4 spaces
+vim.opt.tabstop = 4
+
+--Set the number of spaces used for each step of indentation
+vim.opt.shiftwidth = 4
+
+-- Use spaces instead of tab characters when using <Tab>
+vim.opt.expandtab = true
+vim.opt.softtabstop = 4
+
 -- Save undo history
 vim.o.undofile = true
 
@@ -493,6 +503,7 @@ require('lazy').setup({
       'saghen/blink.cmp',
     },
     config = function()
+      vim.lsp.enable 'pyright'
       -- Brief aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
